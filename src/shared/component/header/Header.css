@@ -1,0 +1,36 @@
+
+.header-menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    background-color: #f3f3f3;
+    width:calc(100% - 40px);
+  }
+  
+  .header-menu li {
+    margin-left: 16px;
+    text-decoration: none!important;
+  }
+  
+  .header-menu .end {
+    margin-left: auto;
+  }
+  .text-dec{
+    text-decoration: none;
+  }
+  
+  .menu-link:hover {
+    color: #00c3ff;
+  }
+  
+  .menu-link:active {
+    color: #0056b3;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  
+  
