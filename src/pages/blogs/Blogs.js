@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Blogs.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import BlogCard from '../../shared/component/blogCard/BlogCard';
 
 const Blogs = () => {
   const [data,setData]= useState([]);
@@ -23,16 +24,7 @@ const Blogs = () => {
     <div className="blog-list-container">
       <h1 className="blog-list-title">Latest Blog Posts</h1>
       {data ? data.map((blog) => (
-        <div className="blog-item" key={blog.id}>
-          <h2 className="blog-title">{blog.title}</h2>
-          <p className="blog-meta">
-            By {blog.author} | {blog.date}
-          </p>
-          <p className="blog-excerpt"> {blog.content}</p>
-          <Link to={`/blogs/${blog.id}`} className="read-more-link">
-            Read More
-          </Link>
-        </div>
+        <BlogCard blog={blog}/>
       )):<div>No Data</div>}
     </div>
   );
