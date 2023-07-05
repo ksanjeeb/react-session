@@ -28,9 +28,7 @@ const Blogs = () => {
           <p className="blog-meta">
             By {blog.author} | {blog.date}
           </p>
-          <p className="blog-excerpt">  {blog.content.split('\n\n').slice(0, 2).map((paragraph, index) => (
-    <p key={index}>{paragraph}</p>
-  ))}</p>
+          <p className="blog-excerpt"> {blog.content}</p>
           <Link to={`/blogs/${blog.id}`} className="read-more-link">
             Read More
           </Link>

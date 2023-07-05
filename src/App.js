@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import PagesRouting from './pages/PagesRouting';
+import Routing from './pages/Routing';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <PagesRouting />
+      <Routing />
       </BrowserRouter>
     </div>
   );

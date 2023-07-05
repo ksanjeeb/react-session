@@ -9,7 +9,7 @@ import Blog from './blog/Blog';
 import ProtectedRoute from '../shared/utility/ProtectedUtils';
 import CreateBlog from './createBlog/CreateBlog';
 import About from './about/About';
-const PagesRouting = () => {
+const Routing = () => {
     const routeTo = (route) => {
         console.log(route)
     }
@@ -38,7 +38,7 @@ const PagesRouting = () => {
     );
 };
 
-export default PagesRouting;
+export default Routing;
 
 
 export const NotFound = () => {

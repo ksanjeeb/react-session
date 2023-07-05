@@ -45,7 +45,7 @@ const HeaderMenu = ({ Callback, Current, ...props }) => {
                         </NavLink >
                 </li>}
                 <li className='end' >
-                    {auth?<div>Hii User, <span onClick={_=>localStorage.clear()}><a>Logout</a></span></div>:<NavLink  to="/login" className=' text-dec'>Login</NavLink >}
+                    {auth?<div>Hii User, <span onClick={_=>localStorage.clear()}><a href="/login">Logout</a></span></div>:<NavLink  to="/login" className=' text-dec'>Login</NavLink >}
                 </li>
             </ul>
         </div>
