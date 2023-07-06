@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BlogCard = ({blog, ...props}) => {
+const BlogCard = ({ blog,callback, ...props }) => {
+    const linkHandler= id =>{
+        if(typeof callback === 'function' )callback(id);
+    }
+
     return (
         <div className="blog-item" key={blog?.id}>
         <h2 className="blog-title">{blog?.title}</h2>
@@ -9,9 +13,9 @@ const BlogCard = ({blog, ...props}) => {
           By {blog?.author} | {blog?.date}
         </p>
         <p className="blog-excerpt"> {blog?.content}</p>
-        <Link to={`/blogs/${blog?.id}`} className="read-more-link">
+        <div className="read-more-link" onClick={_=>linkHandler(blog?.id)}>
           Read More
-        </Link>
+        </div>
       </div>
     );
 };

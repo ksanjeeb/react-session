@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Blogs.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import BlogCard from '../../shared/component/blogCard/BlogCard';
 
 const Blogs = () => {
   const [data,setData]= useState([]);
+  const navigate = useNavigate();
+
   useEffect(()=>{
     getBlogs();
   },[])
@@ -20,11 +22,15 @@ const Blogs = () => {
     })
   }
 
+  const handleBlogRoute =(route)=>{
+    navigate("/blogs/"+route)
+  }
+
   return (
     <div className="blog-list-container">
       <h1 className="blog-list-title">Latest Blog Posts</h1>
       {data ? data.map((blog) => (
-        <BlogCard blog={blog}/>
+        <BlogCard blog={blog} callback={handleBlogRoute}/>
       )):<div>No Data</div>}
     </div>
   );
